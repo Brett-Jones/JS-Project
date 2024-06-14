@@ -1,0 +1,58 @@
+
+
+#clock {
+    font-size: 45px;
+    width: 105px;
+    margin-left: 50%;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-family:autiowide;
+}
+
+
+
+
+#startButton{
+    width: 10%;
+    height: 10%;
+    background-color: green;
+    color: white;
+    box-shadow: 1px 1px 1px black;  
+    border-radius: 8%;  
+}
+
+#pauseButton{
+    width: 10%;
+    height: 10%;
+    background-color: maroon;
+    color: white; 
+    box-shadow: 1px 1px 1px black;  
+    border-radius: 8%; 
+}
+
+#restartButton{
+    width: 10%;
+    height: 10%;
+    background-color:indigo;
+    color: white;    
+    box-shadow: 1px 1px 1px black;
+    border-radius: 8%;
+}
+
+#resumeButton{
+    width: 10%;
+    height: 10%;
+    background-color: rgb(243, 77, 226);
+    color: white;    
+    box-shadow: 1px 1px 1px black;
+    border-radius: 8%;
+}
+
+
+
+
+
+
+
+
