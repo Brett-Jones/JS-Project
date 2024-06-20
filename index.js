@@ -31,11 +31,11 @@ const timer = {
 };
 
 document.getElementById(
-  "start-Button").addEventListener(
+  "start-button").addEventListener(
     "click", function () { timer.start(); });
     
 document.getElementById(
-  "restart-Button").addEventListener(
+  "restart-button").addEventListener(
     "click", function () { timer.restart(); });
 
 
@@ -51,13 +51,15 @@ document.getElementById(
 
     this.classList.add('flip');
 
+    console.log(this)
+
     if (!hasFlippedCard) {
       hasFlippedCard = true;
-      firstCard = this;
+      firstCard = card;
       return;
     }
 
-    secondCard = this;
+    secondCard = card;
     lockBoard = true;
 
     checkForMatch();

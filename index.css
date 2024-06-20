@@ -14,7 +14,7 @@ body {
     background: lightblue;
 }
 
-#header{
+header {
     display: flex;
     flex-direction: row-reverse;
     width: 100%;
@@ -67,11 +67,11 @@ body {
     backface-visibility: hidden;
   }
 
-  .front-face {
+.front-face {
     transform: rotateY(180deg);
-  }
+}
 
-#clock {
+.clock {
     font-size: 25px;
     width: 40%;
     text-align: center;
@@ -80,7 +80,7 @@ body {
     font-family:audiowide;
 }
 
-#start-Button{
+.start-button {
     width: 15%;
     height: 60%;
     background-color: green;
@@ -89,7 +89,7 @@ body {
     border-radius: 8%;  
 }
 
-#restart-Button{
+.restart-button{
     width: 20%;
     height: 30%;
     background-color:indigo;
@@ -99,10 +99,9 @@ body {
     float: right;
 }
 
-#footer{
+footer {
     width: 80%;
     height: 15%;
-
 }
 
 @media only screen and (min-width: 450px) {
@@ -123,7 +122,7 @@ body {
         background: lightblue;
     }
     
-    #header{
+    .header{
         display: flex;
         flex-direction: row-reverse;
         width: 100%;
@@ -143,7 +142,7 @@ body {
         perspective: 1000px;
     }
     
-    .card {
+    .memory-card {
         width: calc(25% - 10px);
         height: calc(33.333% - 10px);
         margin: 5px;
@@ -153,54 +152,28 @@ body {
         /* transform-style: preserve-3d; */
         transition: transform .5s;
     }
-    
-    /* .card:active {
-        transform: scale(0.97);
-        transition: transform .2s;
-    } */
-    
-    .card.flip {
-        transform: rotateY(180deg);
-    }git status
+ 
       
-    .front-face,
-    .back-face {
-        width: 100%;
-        height: 100%;
-        padding: 20px;
-        position: absolute;
-        border-radius: 5px;
-      }
     
-      .back-face {
-        background-color: white;
-        transform: rotateY(180deg);
-      }
-    
-      .front-face {
-        background-color: purple;
-        transform: rotateY(180deg);
-      }
-    
-    #clock {
+    .clock {
         font-size: 25px;
-    width: 40%;
-    text-align: center;
-    border: 2px solid black;
-    border-radius: 20px;
-    font-family:audiowide;
-}
+        width: 40%;
+        text-align: center;
+        border: 2px solid black;
+        border-radius: 20px;
+        font-family:audiowide;
+    }
 
-#start-Button{
-    width: 15%;
-    height: 60%;
-    background-color: green;
-    color: white;
-    box-shadow: 1px 1px 1px black;  
-    border-radius: 8%; 
-}
+    .start-button{
+        width: 15%;
+        height: 60%;
+        background-color: green;
+        color: white;
+        box-shadow: 1px 1px 1px black;  
+        border-radius: 8%; 
+    }
     
-    #restart-Button{
+    .restart-button{
         width: 20%;
         height: 30%;
         background-color:indigo;
@@ -210,7 +183,7 @@ body {
         float: right;
     }
     
-    #footer{
+    footer {
         width: 80%;
         height: 15%;
     
