@@ -31,11 +31,11 @@ const timer = {
 };
 
 document.getElementById(
-  "start-Button").addEventListener(
+  "start-button").addEventListener(
     "click", function () { timer.start(); });
     
 document.getElementById(
-  "restart-Button").addEventListener(
+  "restart-button").addEventListener(
     "click", function () { timer.restart(); });
 
 
@@ -45,19 +45,19 @@ document.getElementById(
   let lockBoard = false;
   let firstCard, secondCard;
 
-  const flipCard = () => {
+  const flipCard = index => {
     if (lockBoard) return;
-    if (this === firstCard) return;
-
-    this.classList.add('flip');
+    const card = cards[index]
+    if (card === firstCard) return;
+    card.classList.add('flip');
 
     if (!hasFlippedCard) {
       hasFlippedCard = true;
-      firstCard = this;
+      firstCard = card;
       return;
     }
 
-    secondCard = this;
+    secondCard = card;
     lockBoard = true;
 
     checkForMatch();
@@ -96,4 +96,4 @@ document.getElementById(
    });
  })();
 
-  cards.forEach(card => card.addEventListener('click', flipCard));
+  cards.forEach((card, index) => card.addEventListener('click', () => flipCard(index)));

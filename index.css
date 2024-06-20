@@ -14,7 +14,7 @@ body {
     background: lightblue;
 }
 
-#header{
+.header{
     display: flex;
     flex-direction: row-reverse;
     width: 100%;
@@ -71,7 +71,7 @@ body {
     transform: rotateY(180deg);
   }
 
-#clock {
+.clock {
     font-size: 25px;
     width: 40%;
     text-align: center;
@@ -80,7 +80,7 @@ body {
     font-family:audiowide;
 }
 
-#start-Button{
+.start-button{
     width: 15%;
     height: 60%;
     background-color: green;
@@ -89,7 +89,7 @@ body {
     border-radius: 8%;  
 }
 
-#restart-Button{
+.restart-button{
     width: 20%;
     height: 30%;
     background-color:indigo;
@@ -99,7 +99,7 @@ body {
     float: right;
 }
 
-#footer{
+.footer{
     width: 80%;
     height: 15%;
 
@@ -108,82 +108,80 @@ body {
 @media only screen and (min-width: 450px) {
 /* everything below is for desktop */
     * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-    
-    body {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        width: 100vw;
-        justify-content: center;
-        align-items: center;
-        background: lightblue;
-    }
-    
-    #header{
-        display: flex;
-        flex-direction: row-reverse;
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        justify-content: space-around;
-        margin-top: auto;
-    }
-    
-    .memory-game {
-        display: flex;
-        height: 50vh;
-        width: 50vw;
-        margin: auto;
-        flex-wrap: wrap;
-        perspective: 1000px;
-    }
-    
-    .card {
-        width: calc(25% - 10px);
-        height: calc(33.333% - 10px);
-        margin: 5px;
-        position: relative;
-        box-shadow: 1px 1px 1px rgba(73, 47, 165, 0.3);
-        /* transform: scale(1); */
-        /* transform-style: preserve-3d; */
-        transition: transform .5s;
-    }
-    
-    /* .card:active {
-        transform: scale(0.97);
-        transition: transform .2s;
-    } */
-    
-    .card.flip {
-        transform: rotateY(180deg);
-    }git status
-      
-    .front-face,
-    .back-face {
-        width: 100%;
-        height: 100%;
-        padding: 20px;
-        position: absolute;
-        border-radius: 5px;
-      }
-    
-      .back-face {
-        background-color: white;
-        transform: rotateY(180deg);
-      }
-    
-      .front-face {
-        background-color: purple;
-        transform: rotateY(180deg);
-      }
-    
-    #clock {
-        font-size: 25px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    background: lightblue;
+}
+
+.header{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: auto;
+}
+
+.memory-game {
+    display: flex;
+    height: 50vh;
+    width: 50vw;
+    margin: auto;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    justify-content: center;
+    align-items: center;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(73, 47, 165, 0.3);
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+  
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    position: absolute;
+    border-radius: 5px;
+    background: lightblue;
+    backface-visibility: hidden;
+  }
+
+  .front-face {
+    transform: rotateY(180deg);
+  }
+
+.clock {
+    font-size: 25px;
     width: 40%;
     text-align: center;
     border: 2px solid black;
@@ -191,33 +189,32 @@ body {
     font-family:audiowide;
 }
 
-#start-Button{
+.start-button{
     width: 15%;
     height: 60%;
     background-color: green;
     color: white;
     box-shadow: 1px 1px 1px black;  
-    border-radius: 8%; 
-}
-    
-    #restart-Button{
-        width: 20%;
-        height: 30%;
-        background-color:indigo;
-        color: white;    
-        box-shadow: 1px 1px 1px black;
-        border-radius: 8%;
-        float: right;
-    }
-    
-    #footer{
-        width: 80%;
-        height: 15%;
-    
-    }    
+    border-radius: 8%;  
 }
 
+.restart-button{
+    width: 20%;
+    height: 30%;
+    background-color:indigo;
+    color: white;    
+    box-shadow: 1px 1px 1px black;
+    border-radius: 8%;
+    float: right;
+}
 
+.footer{
+    width: 80%;
+    height: 15%;
+
+}
+
+}
 
 
 
