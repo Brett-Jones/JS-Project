@@ -21,20 +21,61 @@
     }
   }
 
-const cards = document.querySelectorAll('.card');
+  const cards = document.querySelectorAll('.memory-card');
 
-let hasFlippedCard = false;
-let firstCard, secondCard;
+  let hasFlippedCard = false;
+  let lockBoard = false;
+  let firstCard, secondCard;
 
+  const flipCard() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
 
-function flipCard() {
-  this.classList.toggle('flip');
-  this.classList.add('flip');
+    this.classList.add('flip');
 
-   if (!hasFlippedCard) {
-     hasFlippedCard = true;
-     firstCard = this;
-   }
-}
-  
+    if (!hasFlippedCard) {
+      hasFlippedCard = true;
+      firstCard = this;
+      return;
+    }
+
+    secondCard = this;
+    lockBoard = true;
+
+    checkForMatch();
+  }
+
+  const checkForMatch() {
+    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    isMatch ? disableCards() : unflipCards();
+  }
+
+  const disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+
+    resetBoard();
+  }
+
+  const unflipCards() {
+    setTimeout(() => {
+      firstCard.classList.remove('flip');
+      secondCard.classList.remove('flip');
+
+      resetBoard();
+    }, 1500);
+  }
+
+  const resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+  }
+
+ (function shuffle() {
+   cards.forEach(card => {
+     let ramdomPos = Math.floor(Math.random() * 12);
+     card.style.order = ramdomPos;
+   });
+ })();
+
   cards.forEach(card => card.addEventListener('click', flipCard));
