@@ -7,13 +7,29 @@
         initial-scale=1.0"
     >
     <title>Memory Game</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" 
+        href="index.css">
+    <link rel="preconnect" 
+        href="https://fonts.googleapis.com">
+    <link rel="preconnect" 
+        href="https://fonts.gstatic.com" 
+        crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" 
+        rel="stylesheet">
 </head>
 <body>
-
+    <header id="header">
+        <div id="clock">
+            <label id="minutes">00
+            </label>:
+            <label id="seconds">00
+            </label>
+        </div>
+        <input id="start-Button" 
+            type="button" 
+            value="Start">
+    </header>    
+    </div>
     <section class="memory-game">
         <div class="card" id="card">
             <div class="front-face"></div>
@@ -36,7 +52,7 @@
             <div class="back-face"></div>
         </div>
         <div class="card" id="card">
-            <div class="front-face3"></div>
+            <div class="front-face"></div>
             <div class="back-face"></div>
         </div>
         <div class="card" id="card">
@@ -64,19 +80,11 @@
             <div class="back-face"></div>
         </div>
     </section>
-
-
-    <div id="clock">
-        <label id="minutes">00</label>:<label id="seconds">00</label>
-    </div>
-    <input id="startButton" type="button" value="Start">
-    <input id="restartButton" type="button" value="Restart">
-    <!-- these 2 lines of code will go away once code is finished -->
-    <input id="pauseButton" type="button" value="Pause">
-    <input id="resumeButton" type="button" value="Resume">
-    
-    
-
+    <footer id="footer">
+        <input id="restart-Button" 
+            type="button" 
+            value="Restart">
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>
