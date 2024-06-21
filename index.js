@@ -45,11 +45,11 @@ document.getElementById(
   let lockBoard = false;
   let firstCard, secondCard;
 
-  const flipCard = () => {
+  const flipCard = index => {
     if (lockBoard) return;
-    if (this === firstCard) return;
-
-    this.classList.add('flip');
+    const card = cards[index]
+    if (card === firstCard) return;
+    card.classList.add('flip');
 
     console.log(this)
 
@@ -98,4 +98,4 @@ document.getElementById(
    });
  })();
 
-  cards.forEach(card => card.addEventListener('click', flipCard));
+  cards.forEach((card, index) => card.addEventListener('click', () => flipCard(index)));
