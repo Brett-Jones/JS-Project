@@ -18,6 +18,15 @@ const timer = {
               parseInt(self.totalSeconds % 60));
         }, 1000);
     }
+    // const startGame = document.getElementById(
+    //   "start-button");
+    // const removeImg = document.getElementById(
+    //   "press-start-to-play");
+      
+    // startGame.addEventListener(
+    //     "click", () => { 
+    //       removeImg.style.display = "none";
+    //     });
   },
 
   restart: function () {
@@ -37,6 +46,10 @@ document.getElementById(
 document.getElementById(
   "restart-button").addEventListener(
     "click", function () { timer.restart(); });
+
+document.getElementById(
+  "restart-button").addEventListener(
+        "click", function () { location.reload(); });
 
 
   const cards = document.querySelectorAll('.memory-card');
@@ -66,7 +79,8 @@ document.getElementById(
   }
 
   const checkForMatch = () => {
-    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    let isMatch = firstCard.dataset
+      .framework === secondCard.dataset.framework;
     isMatch ? disableCards() : unflipCards();
   }
 
@@ -98,4 +112,5 @@ document.getElementById(
    });
  })();
 
-  cards.forEach((card, index) => card.addEventListener('click', () => flipCard(index)));
+  cards.forEach((card, index) => card
+    .addEventListener('click', () => flipCard(index)));
