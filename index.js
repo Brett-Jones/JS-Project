@@ -51,6 +51,8 @@ document.getElementById(
     if (card === firstCard) return;
     card.classList.add('flip');
 
+    console.log(this)
+
     if (!hasFlippedCard) {
       hasFlippedCard = true;
       firstCard = card;
