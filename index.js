@@ -21,7 +21,6 @@ const timer = {
               parseInt(self.totalSeconds % 60));
         }, 1000);
     }
-    
   },
 
   restart: function () {
@@ -31,7 +30,6 @@ const timer = {
     document.getElementById("seconds").innerHTML = "00";
     delete this.interval;
   },
-  
 };
 
 document.getElementById(
@@ -84,20 +82,13 @@ document.getElementById(
 
         const result = document.getElementsByClassName("fly-away")
         
-  
       if (result.length === 12) {
-        // stop timer
-          // clearInterval(this.interval);
-          // delete this.interval
-          alert(`Game Over! Your time was: ${clock.textContent.split(":")[0].trim()}:${clock.textContent.split(":")[1].trim()}`);
-
-        // store timer var pass var via string interpalation 
-        // to alert `` "your finaly time was: ${}"
-
-        // alert("Game Over!")
+        const mins =  clock.textContent.split(":")[0].trim();
+        const secs = clock.textContent.split(":")[1].trim();
+          alert(`Game Over! Your time was: minutes ${mins}:${secs} seconds`
+          );
       }
       }, 500) 
-      
     }
 
     isMatch ? disableCards() : unflipCards();
@@ -114,7 +105,6 @@ document.getElementById(
     setTimeout(() => {
       firstCard.classList.remove('flip');
       secondCard.classList.remove('flip');
-
       resetBoard();
     }, 1500);
   }
