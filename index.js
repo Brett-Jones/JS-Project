@@ -2,6 +2,9 @@
 const timer = {
   totalSeconds: 0,
   start: function() {
+    const img = document.getElementById(
+      "welcome");
+    img.style.display = "none";
       // if statement is asking if this.interval doesn't exist then create interval
     if(!this.interval) {
         const self = this;
@@ -18,15 +21,7 @@ const timer = {
               parseInt(self.totalSeconds % 60));
         }, 1000);
     }
-    // const startGame = document.getElementById(
-    //   "start-button");
-    // const removeImg = document.getElementById(
-    //   "press-start-to-play");
-      
-    // startGame.addEventListener(
-    //     "click", () => { 
-    //       removeImg.style.display = "none";
-    //     });
+    
   },
 
   restart: function () {
