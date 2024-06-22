@@ -89,9 +89,8 @@ document.getElementById(
         // stop timer
           // clearInterval(this.interval);
           // delete this.interval
-          alert(`Game Over! Your time was: 
-          minutes${clock.textContent} seconds`);
-      
+          alert(`Game Over! Your time was: ${clock.textContent.split(":")[0].trim()}:${clock.textContent.split(":")[1].trim()}`);
+
         // store timer var pass var via string interpalation 
         // to alert `` "your finaly time was: ${}"
 
