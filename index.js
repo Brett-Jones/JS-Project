@@ -79,8 +79,17 @@ document.getElementById(
   }
 
   const checkForMatch = () => {
-    let isMatch = firstCard.dataset
-      .framework === secondCard.dataset.framework;
+    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    const first = firstCard
+    const second = secondCard
+    if (isMatch) {
+      setTimeout(() => {
+        first.classList.add("fly-away")
+        second.classList.add("fly-away")
+      }, 500) 
+      
+    }
+
     isMatch ? disableCards() : unflipCards();
   }
 
