@@ -81,6 +81,22 @@ document.getElementById(
       setTimeout(() => {
         first.classList.add("fly-away")
         second.classList.add("fly-away")
+
+        const result = document.getElementsByClassName("fly-away")
+        
+  
+      if (result.length === 12) {
+        // stop timer
+          // clearInterval(this.interval);
+          // delete this.interval
+          alert(`Game Over! Your time was: 
+          minutes${clock.textContent} seconds`);
+      
+        // store timer var pass var via string interpalation 
+        // to alert `` "your finaly time was: ${}"
+
+        // alert("Game Over!")
+      }
       }, 500) 
       
     }
