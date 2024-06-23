@@ -2,6 +2,9 @@
 const timer = {
   totalSeconds: 0,
   start: function() {
+    const img = document.getElementById(
+      "welcome");
+    img.style.display = "none";
       // if statement is asking if this.interval doesn't exist then create interval
     if(!this.interval) {
         const self = this;
@@ -27,7 +30,6 @@ const timer = {
     document.getElementById("seconds").innerHTML = "00";
     delete this.interval;
   },
-  
 };
 
 document.getElementById(
@@ -37,6 +39,10 @@ document.getElementById(
 document.getElementById(
   "restart-button").addEventListener(
     "click", function () { timer.restart(); });
+
+document.getElementById(
+  "restart-button").addEventListener(
+        "click", function () { location.reload(); });
 
 
   const cards = document.querySelectorAll('.memory-card');
@@ -73,8 +79,16 @@ document.getElementById(
       setTimeout(() => {
         first.classList.add("fly-away")
         second.classList.add("fly-away")
+
+        const result = document.getElementsByClassName("fly-away")
+        
+      if (result.length === 12) {
+        const mins =  clock.textContent.split(":")[0].trim();
+        const secs = clock.textContent.split(":")[1].trim();
+          alert(`Game Over! Your time was: minutes ${mins}:${secs} seconds`
+          );
+      }
       }, 500) 
-      
     }
 
     isMatch ? disableCards() : unflipCards();
@@ -91,7 +105,6 @@ document.getElementById(
     setTimeout(() => {
       firstCard.classList.remove('flip');
       secondCard.classList.remove('flip');
-
       resetBoard();
     }, 1500);
   }
@@ -108,4 +121,5 @@ document.getElementById(
    });
  })();
 
-  cards.forEach((card, index) => card.addEventListener('click', () => flipCard(index)));
+  cards.forEach((card, index) => card
+    .addEventListener('click', () => flipCard(index)));
